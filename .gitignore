@@ -7,5 +7,7 @@ build/
 data/frames/
 data/annotations/
 results/
-reports/
+reports/*/
+!reports/benchmark_report.html
+!reports/cost_vs_accuracy.html
 *.DS_Store
