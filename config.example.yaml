@@ -1,0 +1,31 @@
+# Manako Benchmark Configuration
+# Copy to config.yaml and fill in your values
+
+# Dataset paths
+frames_dir: data/frames
+annotations_path: data/annotations/annotations.json
+
+# SN44 model (auto-downloads from HuggingFace if weights path is null)
+sn44_weights: null
+sn44_hf_repo: alfred8995/kane001
+sn44_conf_threshold: 0.45
+
+# SAM3 (pseudo ground truth ceiling)
+sam3_endpoint: ""
+sam3_api_key: ""
+
+# Roboflow (best open-source baseline)
+roboflow_api_key: ""
+roboflow_model_id: vehicles-q0x2v/1
+roboflow_use_local: false
+
+# Evaluation settings
+device: cpu  # cpu or cuda
+models:
+  - sn44
+  - roboflow
+  - sam3
+
+# Output
+results_dir: results
+reports_dir: reports
