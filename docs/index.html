@@ -47,10 +47,10 @@ Person Detection + Vehicle Detection &bull; Independent ground truth &bull; No d
 <tr><td>Precision</td><td class="sn44">95.8%</td><td class="sam3">99.0%</td><td class="rf">94.2%</td></tr>
 <tr><td>Recall</td><td class="sn44">72.4%</td><td class="sam3">82.0%</td><td class="rf">27.3%</td></tr>
 <tr class="task-header"><td colspan="4">Vehicle Detection (200 images, 1,792 annotations)</td></tr>
-<tr><td>mAP@50</td><td class="sn44">74.3%</td><td class="sam3">98.4%</td><td class="rf">10.4%</td></tr>
-<tr><td>Car</td><td class="sn44">74.8%</td><td class="sam3">98.8%</td><td class="rf">13.3%</td></tr>
-<tr><td>Bus</td><td class="sn44">89.1%</td><td class="sam3">98.0%</td><td class="rf">9.2%</td></tr>
-<tr><td>Truck</td><td class="sn44">59.1%</td><td class="sam3">98.3%</td><td class="rf">8.6%</td></tr>
+<tr><td>mAP@50</td><td class="sn44">77.0%</td><td class="sam3">98.4%</td><td class="rf">10.4%</td></tr>
+<tr><td>Car</td><td class="sn44">77.7%</td><td class="sam3">98.8%</td><td class="rf">13.3%</td></tr>
+<tr><td>Bus</td><td class="sn44">90.1%</td><td class="sam3">98.0%</td><td class="rf">9.2%</td></tr>
+<tr><td>Truck</td><td class="sn44">63.4%</td><td class="sam3">98.3%</td><td class="rf">8.6%</td></tr>
 </tbody></table>
 
 <div class="section-title">Compute Efficiency</div>
@@ -71,7 +71,7 @@ Person Detection + Vehicle Detection &bull; Independent ground truth &bull; No d
 <table>
 <thead><tr><th>Model</th><th>Person E</th><th>Vehicle E</th><th>Combined E</th><th>Rank</th></tr></thead>
 <tbody>
-<tr><td class="sn44">SN44</td><td class="sn44">4.47</td><td class="sn44">3.77</td><td class="sn44">4.12</td><td class="sn44">#1</td></tr>
+<tr><td class="sn44">SN44</td><td class="sn44">4.47</td><td class="sn44">3.91</td><td class="sn44">4.19</td><td class="sn44">#1</td></tr>
 <tr><td class="rf">Roboflow</td><td class="rf">&mdash;</td><td class="rf">&mdash;</td><td class="rf">&mdash;</td><td class="rf">&mdash;</td></tr>
 <tr><td class="sam3">SAM3</td><td class="sam3">0.0282</td><td class="sam3">0.0285</td><td class="sam3">0.0284</td><td class="sam3">#3</td></tr>
 </tbody></table>
@@ -81,13 +81,13 @@ Person Detection + Vehicle Detection &bull; Independent ground truth &bull; No d
 <div class="eff-item"><div class="big">145x</div><div class="label">more efficient<br>than SAM3</div></div>
 <div class="eff-item"><div class="big">4.1x</div><div class="label">more efficient<br>than Roboflow</div></div>
 <div class="eff-item"><div class="big">19 MB</div><div class="label">model size<br>runs on any CPU</div></div>
-<div class="eff-item"><div class="big">79%</div><div class="label">avg accuracy vs SAM3<br>at 0.5% of the size</div></div>
+<div class="eff-item"><div class="big">82%</div><div class="label">avg accuracy vs SAM3<br>at 0.5% of the size</div></div>
 </div>
 </div>
 
 <div class="note">
 <strong>Methodology:</strong> Person detection: 200 images, 5,883 annotations (manak0/Detect-Person-winner). 
-Vehicle detection: 200 images, 1,792 annotations, 3 classes (alfred8995/kane001).
+Vehicle detection: 200 images, 1,792 annotations, 3 classes (manak0/Detect-detect-vehicle-winner).
 All evaluated against independently generated ground truth — no model was involved in GT creation.
 SAM3: facebook/sam3, 848M params. Roboflow: cctv-naxyo/1 (person), vehicles-q0x2v/1 (vehicle).
 Vision Efficiency Score E = mAP / S rewards models that maximize accuracy per megabyte of deployment cost.
